@@ -1,0 +1,41 @@
+﻿<h2>Test Task</h2>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link  rel="stylesheet" href="~/Content/style.css" media="screen" type="text/css" />
+</head>
+<body>
+<script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/knockout/knockout-3.4.0.js"></script>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+<div class="entr">
+    First Name:<input type="text" data-bind="value: firstname" placeholder="Enter First Name" /><br />
+    Last Name:<input type="text" data-bind="value: lastname" placeholder="Enter Last Name" /><br />
+    <input type="submit" value="Save" data-bind="click:addData"/><br/> <br/> 
+    <button id="load">Load Data</button>
+    <input type="submit" value="Save to TXT" id="submit" />
+    <input type="submit" value="Clear table" id="clear" />
+</div>
+<div class="tbl">
+    <table>
+        <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+        </tr>
+        </thead>
+        <tbody data-bind="foreach:person">
+        <tr>
+            <td id="tfname" data-bind="text:FirstName"></td>
+            <td id="tlname" data-bind="text:LastName"></td>
+        </tr>
+        </tbody>
+    </table>
+            
+</div>
+    
+    <script src="~/Scripts/app/myApp.js"></script>
+</body>
+</html>
