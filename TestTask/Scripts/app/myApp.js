@@ -20,7 +20,7 @@ ko.validation.init(settings, true);
                 var per = [
                     { FirstName: this.firstname(), LastName: this.lastname() }
                 ];
-                ko.mapping.fromJS(per);
+                ko.mapping.fromJS(per,this);
                 this.Savetotxt();
                 this.firstname("");
                 this.lastname("");
@@ -53,9 +53,7 @@ ko.validation.init(settings, true);
                 type: 'GET',
                 dataType: 'json',
                 success: function (result) {
-                    //VM.person = ko.mapping.fromJSON(result);
-                    // ko.mapping.fromJSON(result,{},VM.person);
-                    VM.person(result);//Update data in table
+                    ko.mapping.fromJS(result,VM.person);
                     console.log(result);
                 }
             });
@@ -85,9 +83,8 @@ ko.validation.init(settings, true);
             }
         }
     };
-VM.errors = ko.validation.group(VM);
-ko.applyBindings(VM);
 
 $(document).ready(function () {
-   
+    VM.errors = ko.validation.group(VM);
+    ko.applyBindings(VM);
 });
