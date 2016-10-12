@@ -8,15 +8,16 @@
 </head>
 <body>
 <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/knockout/knockout-3.4.0.js"></script>
+    <script src="~/Scripts/knockout.mapping-latest.js"></script>
+    <script src="~/Scripts/knockout.validation.js"></script>
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
 <div class="entr">
-    First Name:<input type="text" data-bind="value: firstname" placeholder="Enter First Name" /><br />
-    Last Name:<input type="text" data-bind="value: lastname" placeholder="Enter Last Name" /><br />
+    First Name:<input type="text" data-bind="value: firstname" placeholder="Enter First Name" /><span data-bind="visible:message">This field is required</span><br/>
+    Last Name:<input type="text" data-bind="value: lastname" placeholder="Enter Last Name" /><span data-bind="    visible: message">This field is required</span><br/>
     <input type="submit" value="Save" data-bind="click:addData"/><br/> <br/> 
-    <button id="load">Load Data</button>
-    <input type="submit" value="Save to TXT" id="submit" />
-    <input type="submit" value="Clear table" id="clear" />
+
+    <input type="submit" value="Remove" data-bind="click: Remove" />
 </div>
 <div class="tbl">
     <table>

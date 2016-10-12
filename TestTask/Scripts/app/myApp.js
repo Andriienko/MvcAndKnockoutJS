@@ -1,55 +1,93 @@
-﻿var VM = {
-    person: ko.observableArray([]),//Array of rows
-    firstname: ko.observable(),//input value 
-    lastname: ko.observable(),//input value 
-    FirstName: ko.observable(),//value in the table
-    LastName: ko.observable(),//value in the table
-    addData: function () {//Adding data to table by click "Save"
-        this.FirstName(this.firstname());
-        this.LastName(this.lastname());
-        this.person.push({ FirstName: VM.FirstName(), LastName: VM.LastName() });
-        this.firstname("");
-        this.lastname("");
-    }
+﻿ko.validation.rules.pattern.message = 'Invalid.';
+var settings={
+    registerExtenders: true,
+    messagesOnModified: true,
+    insertMessages: false,
+    parseInputAttributes: true,
+    messageTemplate: null
 };
-ko.applyBindings(VM);
-$(document).ready(function () {
-    //Saving data from table to TXT in JSON format using AJAX by JQuery
-    $('#submit').click(function (e) {
-        e.preventDefault();
-        var persons = [];
-        var table = $("table tbody");
-        table.find('tr').each(function (i, el) {
-            var $tds = $(this).find('td'),
-                fn = $tds.eq(0).text(),
-                ln = $tds.eq(1).text();
-            var per = {
-                FirstName: fn,
-                LastName:ln
+ko.validation.init(settings, true);
+    var VM = {
+        message: ko.observable(false),
+        person: ko.mapping.fromJS([]),
+        // person: ko.observableArray([]),//Array of rows
+        firstname: ko.observable().extend({ required: true }),//input value 
+        lastname: ko.observable().extend({ required: true }),//input value 
+        addData: function () {//Adding data to table by click "Save"
+            //this.person = ko.mapping.fromJS(data);
+            if (VM.errors().length == 0) {
+                this.message(false);
+                var per = [
+                    { FirstName: this.firstname(), LastName: this.lastname() }
+                ];
+                ko.mapping.fromJS(per);
+                this.Savetotxt();
+                this.firstname("");
+                this.lastname("");
+            } else {
+                alert('Please check your fields.');
+                this.message(true);
+            }
+
+        },
+        Savetotxt: function () {
+            //var persons = [];
+            var person = {
+                FirstName: this.firstname(),
+                LastNAme: this.lastname()
             };
-            persons.push(per);
-        });
-        $.ajax({
-            url: 'Home/Setdata',
-            type: 'POST',
-            dataType: 'json',
-            data: { data: persons },
-            success: function () {}
-        });
-    });
-    //Loading data from TXT to table in JSON format using AJAX by JQuery
-    $('#load').click(function(e) {
-        $.ajax({
-            url: "Home/Readdata",
-            type: 'GET',
-            dataType:'json',
-            success: function (result) {
-                VM.person(result);//Update data in table
-               // console.log(result);
-            } });
-    });
-    $('#clear').click(function (e) {
-        var clr = [];
-                VM.person(clr);//Clear data in table
-    });
+            // persons.push(person);
+            $.ajax({
+                url: 'Home/Setdata',
+                type: 'POST',
+                dataType: 'json',
+                data: { data: person },
+                success: function () {
+                    VM.Load();
+                }
+            });
+        },
+        Load: function () {
+            $.ajax({
+                url: "Home/Readdata",
+                type: 'GET',
+                dataType: 'json',
+                success: function (result) {
+                    //VM.person = ko.mapping.fromJSON(result);
+                    // ko.mapping.fromJSON(result,{},VM.person);
+                    VM.person(result);//Update data in table
+                    console.log(result);
+                }
+            });
+        },
+        Clear: function () {
+            this.person([]);
+        },
+        Remove: function () {
+            if (VM.errors().length == 0) {
+                this.message(false);
+                var person = {
+                    FirstName: this.firstname(),
+                    LastNAme: this.lastname()
+                };
+                $.ajax({
+                    url: "Home/Remove",
+                    type: 'POST',
+                    dataType: 'json',
+                    data: { data: person },
+                    success: function () {
+                        VM.Load();
+                    }
+                });
+            } else {
+                alert('Please check your fields.');
+                this.message(true);
+            }
+        }
+    };
+VM.errors = ko.validation.group(VM);
+ko.applyBindings(VM);
+
+$(document).ready(function () {
+   
 });

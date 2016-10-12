@@ -39,3 +39,42 @@ c:\users\юлія\documents\visual studio 2015\Projects\TestTask\TestTask\obj\De
 c:\users\юлія\documents\visual studio 2015\Projects\TestTask\TestTask\obj\Debug\TestTask.pdb
 C:\Users\юлія\documents\visual studio 2015\Projects\TestTask\TestTask\bin\Newtonsoft.Json.dll
 C:\Users\юлія\documents\visual studio 2015\Projects\TestTask\TestTask\bin\Newtonsoft.Json.xml
+E:\Downloads\TestTask\TestTask\bin\roslyn\csc.exe
+E:\Downloads\TestTask\TestTask\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\Downloads\TestTask\TestTask\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\Downloads\TestTask\TestTask\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\Downloads\TestTask\TestTask\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\Downloads\TestTask\TestTask\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\Downloads\TestTask\TestTask\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\Downloads\TestTask\TestTask\bin\roslyn\System.Collections.Immutable.dll
+E:\Downloads\TestTask\TestTask\bin\roslyn\System.Reflection.Metadata.dll
+E:\Downloads\TestTask\TestTask\bin\roslyn\vbc.exe
+E:\Downloads\TestTask\TestTask\bin\roslyn\VBCSCompiler.exe
+E:\Downloads\TestTask\TestTask\bin\roslyn\VBCSCompiler.exe.config
+E:\Downloads\TestTask\TestTask\bin\TestTask.dll
+E:\Downloads\TestTask\TestTask\bin\TestTask.pdb
+E:\Downloads\TestTask\TestTask\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\Downloads\TestTask\TestTask\bin\Newtonsoft.Json.dll
+E:\Downloads\TestTask\TestTask\bin\System.Web.Helpers.dll
+E:\Downloads\TestTask\TestTask\bin\System.Web.Mvc.dll
+E:\Downloads\TestTask\TestTask\bin\System.Web.Razor.dll
+E:\Downloads\TestTask\TestTask\bin\System.Web.Webpages.Deployment.dll
+E:\Downloads\TestTask\TestTask\bin\System.Web.Webpages.dll
+E:\Downloads\TestTask\TestTask\bin\System.Web.Webpages.Razor.dll
+E:\Downloads\TestTask\TestTask\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\Downloads\TestTask\TestTask\bin\Newtonsoft.Json.xml
+E:\Downloads\TestTask\TestTask\bin\System.Web.Razor.xml
+E:\Downloads\TestTask\TestTask\bin\System.Web.Webpages.xml
+E:\Downloads\TestTask\TestTask\bin\System.Web.Webpages.Deployment.xml
+E:\Downloads\TestTask\TestTask\bin\System.Web.Webpages.Razor.xml
+E:\Downloads\TestTask\TestTask\bin\System.Web.Helpers.xml
+E:\Downloads\TestTask\TestTask\bin\System.Web.Mvc.xml
+E:\Downloads\TestTask\TestTask\bin\ru\System.Web.Razor.resources.dll
+E:\Downloads\TestTask\TestTask\bin\ru\System.Web.Webpages.resources.dll
+E:\Downloads\TestTask\TestTask\bin\ru\System.Web.Webpages.Deployment.resources.dll
+E:\Downloads\TestTask\TestTask\bin\ru\System.Web.Webpages.Razor.resources.dll
+E:\Downloads\TestTask\TestTask\bin\ru\System.Web.Helpers.resources.dll
+E:\Downloads\TestTask\TestTask\bin\ru\System.Web.Mvc.resources.dll
+E:\Downloads\TestTask\TestTask\obj\Debug\TestTask.dll
+E:\Downloads\TestTask\TestTask\obj\Debug\TestTask.pdb
+E:\Downloads\TestTask\TestTask\obj\Debug\TestTask.csprojResolveAssemblyReference.cache
